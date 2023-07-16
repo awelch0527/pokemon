@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+       margin: 0;
+      padding: 0;
+      background-image: url("background.jpg"); /* Set the background image */
+      background-repeat: no-repeat; /* Prevent the background image from repeating */
+      background-size: cover; /* Scale the background image to cover the entire container */
+      background-position: center; /* Center the background image within the container */
+      background-blend-mode: multiply; /* Adjust blending mode for better visibility */
+      
+    }
+    #battle-container {
+      position: relative;
+      width: 800px;
+      height: 400px;
+      margin: 0 auto;
+
+    }
+    .pokemon {
+      position: absolute;
+    }
+    #pikachu {
+      bottom: 0;
+      right: 0;
+    }
+    #charizard {
+      top: 0;
+      left: 0;
+    }
+    .pokemon img {
+      width: 200px;
+      height: 200px;
+    }
+    .pokemon .attack-btn {
+      margin-top: 10px;
+      background-color: #FFCB49;
+      color: #333;
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
+      box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.15);
+      text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+    }
+    .pokemon .attack-btn:hover {
+      transform: translateY(1px);
+      box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15);
+    }
+    #battle-log {
+        position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  overflow-y: scroll;
+  padding: 10px;
+    }
+
+    #versus {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 150px; /* Adjust the size of the versus image */
+      height: 150px; /* Adjust the size of the versus image */
+    }
+
+    #charizard-health{
+     display: inline-block;
+     padding: 5px 10px;
+     background-color: red;
+    color: black;
+    font-family: "Arial", sans-serif;
+     font-size: 18px;
+    border-radius: 6px;
+    }
+
+    #pikachu-health{
+     display: inline-block;
+     padding: 5px 10px;
+     background-color: red;
+    color: black;
+    font-family: "Arial", sans-serif;
+     font-size: 18px;
+    border-radius: 6px;
+    }
+
+    .pokemon h3 {
+  color: red;
+  font-family: "Tahoma", sans-serif;
+}
+  </style>
+</head>
+<body>
+  <div id="battle-container">
+    <div class="pokemon" id="pikachu">
+      <h3>Pikachu</h3>
+      <img src="" alt="Pikachu" id="pikachu-image">
+      <p id="pikachu-health">Health: 100</p>
+      <button class="attack-btn">Attack</button>
+    </div>
+    <img src="vs.png" alt="Versus" id="versus">
+    <div class="pokemon" id="charizard">
+      <h3>Charizard</h3>
+      <img src="" alt="Charizard" id="charizard-image">
+      <p id="charizard-health">Health: 100</p>
+      <button class="attack-btn">Attack</button>
+    </div>
+  </div>
+  <div id="battle-log"></div>
+  <script src="script.js"></script>
+</body>
+</html>
