@@ -1,4 +1,3 @@
-
 class Pokemon {
   constructor(name) {
     this.name = name;
@@ -7,7 +6,6 @@ class Pokemon {
     this.abilities = [];
     this.stats = []; // Added the stats property
     this.level = 50; // Set the level to the desired value
-    
 
     this.fetchSprite();
     this.fetchAbilities();
@@ -71,20 +69,20 @@ class Pokemon {
       .then(response => response.json())
       .then(data => {
         const moveDetails = data;
-        
+
         // Find the power of the move
         const power = moveDetails.power || 0;
-        
+
         // Find the attacker's attack stat
         const attackerStat = this.getStatValue('attack');
-        
+
         // Find the defender's defense stat
         const defenderStat = enemy.getStatValue('defense');
-        
+
         // Generate random attack powers
         const attackerDamage = Math.floor(Math.random() * 20 + 10); // Random value between 10 and 29
         const defenderDamage = Math.floor(Math.random() * 10 + 5); // Random value between 5 and 14
-        
+
         enemy.receiveDamage(attackerDamage);
         this.receiveDamage(defenderDamage);
         this.updateHealthDisplay();
@@ -98,11 +96,13 @@ class Pokemon {
         console.error('Error:', error);
       });
   }
+
   getStatValue(statName) {
     const stats = this.stats;
     const stat = stats.find(stat => stat.stat.name.toLowerCase() === statName.toLowerCase());
     return stat ? stat.base_stat : 0;
   }
+
   receiveDamage(damage) {
     this.health -= damage;
     if (this.health < 0) {
@@ -165,3 +165,22 @@ pikachuImage.addEventListener('click', () => {
 charizardImage.addEventListener('click', () => {
   charizard.attackEnemy(charizard.abilities[0], pikachu);
 });
+
+// Preload the data before creating the instances
+fetch(`https://pokeapi.co/api/v2/pokemon/pikachu`)
+  .then(response => response.json())
+  .then(data => {
+    pikachu.preloadData(data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+fetch(`https://pokeapi.co/api/v2/pokemon/charizard`)
+  .then(response => response.json())
+  .then(data => {
+    charizard.preloadData(data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });

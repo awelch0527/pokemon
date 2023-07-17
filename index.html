@@ -14,6 +14,7 @@
     }
 
     #battle-container {
+        font-family: 'Press Start 2P', monospace;
       position: relative;
       width: 800px;
       height: 400px;
@@ -28,17 +29,20 @@
       position: absolute;
     }
 
-.pokemon .button-container {
+    .pokemon .button-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   font-family: 'Press Start 2P', monospace;
   margin-top: 20px;
   max-width: 90%;
+  max-height: 150px; /* Adjust the maximum height as needed */
+  overflow-y: auto; /* Add scrolling if necessary */
 }
 
 .pokemon .attack-btn {
   margin: 5px;
+  font-family: 'Press Start 2P', monospace;
 }
 
     #pikachu {
@@ -71,6 +75,7 @@
     }
 
     .pokemon .attack-btn:hover {
+        font-family: 'Press Start 2P', monospace;
       transform: translateY(1px);
       box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15);
     }
@@ -115,6 +120,7 @@
     }
 
     #charizard-health {
+        font-family: 'Press Start 2P', monospace;
       display: inline-block;
       padding: 5px 10px;
       background-color: red;
@@ -125,6 +131,7 @@
     }
 
     #pikachu-health {
+        font-family: 'Press Start 2P', monospace;
       display: inline-block;
       padding: 5px 10px;
       background-color: red;
@@ -135,8 +142,9 @@
     }
 
     .pokemon h3 {
+        font-family: 'Press Start 2P', monospace;
       color: red;
-      font-family: "Tahoma", sans-serif;
+      
     }
 
     #pokeball {
